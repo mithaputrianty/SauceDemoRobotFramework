@@ -5,7 +5,7 @@ Resource   ../variables/sauce_demo_variables.robot
 
 *** Keywords ***
 Given User access Sauce Demo website
-    Open browser    about:blank    ${browser}[Edge]
+    Open browser    about:blank    ${browser}[Firefox]
     Go to           ${base_url}
     Maximize Browser Window
     Sleep    2s
@@ -15,12 +15,14 @@ When User input Username ${username}
 
 And User input Password ${password}
     Input Text    ${login_field}[password]    ${password}
+    Sleep    2s
 
 And User click Login button
     Click Element    ${login_button}[login_button]
 
 Then User successfully login to Sauce Demo website
     Wait Until Page Contains    Products
+    Sleep    2s
     Close Browser
 
 #User locked_out_user
