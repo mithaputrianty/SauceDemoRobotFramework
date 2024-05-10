@@ -20,7 +20,7 @@ Login using invalid credential
     ${EMPTY}    ${EMPTY}    Epic sadface: Username is required
     
 Login using user locked_out_user
-    Given User access Swag Labs website
+    Given User access Sauce Demo website
     When User input Username
     And User input Password 
     And User click Login button
@@ -29,15 +29,15 @@ Login using user locked_out_user
 *** Keywords ***
 Scenario Outline Login using valid credential
     [Arguments]    ${username}    ${password}
-    Given User access Swag Labs website
+    Given User access Sauce Demo website
     When User input Username ${username}
     And User input Password ${password}
     And User click Login button
-    Then User successfully login to Swag Labs website
+    Then User successfully login to Sauce Demo website
 
 Scenario Outline Login using invalid credential
     [Arguments]    ${username}    ${password}    ${error_message}
-    Given User access Swag Labs website
+    Given User access Sauce Demo website
     When User input Username ${username}
     And User input Password ${password}
     And User click Login button

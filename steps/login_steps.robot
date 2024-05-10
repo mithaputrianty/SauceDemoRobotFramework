@@ -4,7 +4,7 @@ Resource   ../variables/sauce_demo_variables.robot
 
 
 *** Keywords ***
-Given User access Swag Labs website
+Given User access Sauce Demo website
     Open browser    about:blank    ${browser}[Edge]
     Go to           ${base_url}
     Maximize Browser Window
@@ -19,7 +19,7 @@ And User input Password ${password}
 And User click Login button
     Click Element    ${login_button}[login_button]
 
-Then User successfully login to Swag Labs website
+Then User successfully login to Sauce Demo website
     Wait Until Page Contains    Products
     Close Browser
 
@@ -41,12 +41,20 @@ Then User failed to login because see error message ${error_message}
     Run Keyword If		'${error_message}'=='Epic sadface: Password is required'     Wait Until Page Contains    Password is required
     Close Browser
 
-Given User login as standard_user
-    Open browser    about:blank    ${browser}[Firefox]
+Given User login as ${role}
+    Open browser    about:blank    ${browser}[Edge]
     Go to           ${base_url}
     Maximize Browser Window
-    Input Text    ${login_field}[username]    ${standard_user}[0]
-    Input Text    ${login_field}[password]    ${standard_user}[1]
+    Run Keyword If    '${role}'=='standard_user'    Input Text    ${login_field}[username]    ${username}[standard_user]
+    Run Keyword If    '${role}'=='standard_user'    Input Text    ${login_field}[password]    ${password}[0]
+    Run Keyword If    '${role}'=='problem_user'    Input Text    ${login_field}[username]    ${username}[problem_user]
+    Run Keyword If    '${role}'=='problem_user'    Input Text    ${login_field}[password]    ${password}[0]
+    Run Keyword If    '${role}'=='performance_glitch_user'    Input Text    ${login_field}[username]    ${username}[performance_glitch_user]
+    Run Keyword If    '${role}'=='performance_glitch_user'    Input Text    ${login_field}[password]    ${password}[0]
+    Run Keyword If    '${role}'=='error_user'    Input Text    ${login_field}[username]    ${username}[error_user]
+    Run Keyword If    '${role}'=='error_user'    Input Text    ${login_field}[password]    ${password}[0]
+    Run Keyword If    '${role}'=='visual_user'    Input Text    ${login_field}[username]    ${username}[visual_user]
+    Run Keyword If    '${role}'=='visual_user'    Input Text    ${login_field}[password]    ${password}[0]
     Click Element    ${login_button}[login_button]
     Wait Until Page Contains    Products
     Sleep    2s
