@@ -31,7 +31,7 @@ Sauce Demo is Sauce Labs' open source websites. This website is a simple E-Comme
 <img src="screenshot/setup_browser_variables.png" width="360">
 
 #####   b. Set Up browser that will be used when executing the test case in steps files
-<img src="screenshot/setup_browser_steps.png" width="360">
+<vid src="screenshot/setup_browser_steps.png" width="360">
 
 #### 2. Run Test Script
 #####   a. Via VS Code Run Test Button
@@ -62,7 +62,19 @@ Sauce Demo is Sauce Labs' open source websites. This website is a simple E-Comme
 
 
 ## 📹Running Result
+#### Here is an example of a running video
+<img src="screenshot/running_result.gif" width="720">
 
 ### Report
+#### Report can be accessed in the following ways:
+1. If run test cases via VS Code Run Test Button or via Terminal Command using script to execute selected test case, then:
+
+      a. Open file report.html on results folder after test running has been finished
+   
+      b. Open file report.html on Terminal after test running has been finished
+<img src="screenshot/terminal_after_running_test_finished.png" width="360">
+2. If run test cases via Terminal Command using script to execute all test case, then open file report.html on your project folder after test running has been finished
+
+#### Here is an example of Robot Framework report
 <img src="screenshot/SauceDemoRobot_Report.png" width="840">
 
