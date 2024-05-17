@@ -1,6 +1,7 @@
 *** Settings ***
 Library     SeleniumLibrary
 Resource    ../steps/login_steps.robot
+Resource    ../steps/product_steps.robot
 Resource    ../steps/transaction_steps.robot
 
 *** Test Cases ***
