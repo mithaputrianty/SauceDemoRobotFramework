@@ -1,0 +1,25 @@
+# elements:
+# Your Cart page
+  checkout_cart_page : "checkout"
+  continue_shop_cart_page : "continue-shopping"
+
+  remove_backpack_cart_btn : "remove-sauce-labs-backpack"
+  remove_bikelight_cart_btn : "remove-sauce-labs-bike-light"
+  remove_boltshirt_cart_btn : "remove-sauce-labs-bolt-t-shirt"
+  remove_fleecejacket_cart_btn : "remove-sauce-labs-fleece-jacket"
+  remove_onesie_cart_btn : "remove-sauce-labs-onesie"
+  remove_redtshirt_cart_btn : "remove-test.allthethings()-t-shirt-(red)"
+
+# Checkout: Your Information Page
+  first_name_field : "first-name"
+  last_name_field : "last-name"
+  postal_code_field : "postal-code"
+  continue_checkout_btn : "continue"
+  cancel_checkout_btn : "cancel"
+
+# Checkout: Overview Page
+  finish_overview_btn : "finish"
+  cancel_overview_btn : "cancel"
+
+# Checkout: Complete! Page
+  back_home_btn : "back-to-products"

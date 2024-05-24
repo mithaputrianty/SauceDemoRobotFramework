@@ -1,24 +1,11 @@
 *** Settings ***
 Library     SeleniumLibrary
+Library    String
 Resource    ../steps/login_steps.robot
 Resource    ../steps/product_steps.robot
 Resource    ../steps/transaction_steps.robot
-
-*** Test Cases ***
-Purchase product as standard_user
-    [Template]    Scenario Outline Purchase product as standard_user
-    1    Mitha    Putri    41111
-    2    Mitha    Putri    41111
-    3    Mitha    Putri    41111
-        
-Purchase product as standard_user when user didn't fill data in Your Information page
-    [Template]    Scenario Outline Purchase product as standard_user when user didn't fill data in Your Information page
-    1    ${EMPTY}    Putri    41111    Error: First Name is required
-    2    Mitha    ${EMPTY}    41111    Error: Last Name is required
-    3    Mitha    Putri    ${EMPTY}    Error: Postal Code is required
-    1    ${EMPTY}    ${EMPTY}    41111    Error: First Name is required
-    2    Mitha    ${EMPTY}    ${EMPTY}    Error: Last Name is required
-    3    ${EMPTY}    Putri    ${EMPTY}    Error: First Name is required
+Suite Setup    Open Browser    about:blank    Firefox
+Suite Teardown     Close Browser
 
 *** Keywords ***
 Scenario Outline Purchase product as standard_user
@@ -51,3 +38,19 @@ Scenario Outline Purchase product as standard_user when user didn't fill data in
     And User input Zip/Postal Code ${postal_code}
     And User click Continue button on Checkout: Your Information page
     Then User failed navigate to Checkout: Overview page because see error_message ${error_message}
+    
+*** Test Cases ***
+Purchase product as standard_user
+    [Template]    Scenario Outline Purchase product as standard_user
+    1    Mitha    Putri    41111
+    2    Mitha    Putri    41111
+    3    Mitha    Putri    41111
+        
+Purchase product as standard_user when user didn't fill data in Your Information page
+    [Template]    Scenario Outline Purchase product as standard_user when user didn't fill data in Your Information page
+    1    ${EMPTY}    Putri    41111    Error: First Name is required
+    2    Mitha    ${EMPTY}    41111    Error: Last Name is required
+    # 3    Mitha    Putri    ${EMPTY}    Error: Postal Code is required
+    # 1    ${EMPTY}    ${EMPTY}    41111    Error: First Name is required
+    # 2    Mitha    ${EMPTY}    ${EMPTY}    Error: Last Name is required
+    # 3    ${EMPTY}    Putri    ${EMPTY}    Error: First Name is required

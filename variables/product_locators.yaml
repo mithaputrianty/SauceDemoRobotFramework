@@ -1,0 +1,20 @@
+# elements:
+  burger_menu_icon : "react-burger-menu-btn"
+# cart_icon : css.shopping_cart_link
+
+  add_backpack_btn : "add-to-cart-sauce-labs-backpack"
+  add_bikelight_btn : "add-to-cart-sauce-labs-bike-light"
+  add_boltshirt_btn : "add-to-cart-sauce-labs-bolt-t-shirt"
+  add_fleecejacket_btn : "add-to-cart-sauce-labs-fleece-jacket"
+  add_onesie_btn : "add-to-cart-sauce-labs-onesie"
+  add_redtshirt_btn : "add-to-cart-test.allthethings()-t-shirt-(red)"
+
+  remove_backpack_btn : "remove-sauce-labs-backpack"
+  remove_bikelight_btn : "remove-sauce-labs-bike-light"
+  remove_boltshirt_btn : "remove-sauce-labs-bolt-t-shirt"
+  remove_fleecejacket_btn : "remove-sauce-labs-fleece-jacket"
+  remove_onesie_btn : "remove-sauce-labs-onesie"
+  remove_redtshirt_btn : "remove-test.allthethings()-t-shirt-(red)"
+
+  add_product_detail_btn : "add-to-cart"
+  remove_product_detail_btn : "remove"
