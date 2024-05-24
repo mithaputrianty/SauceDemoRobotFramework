@@ -32,6 +32,8 @@ Then User failed to login because see error message ${error_message}
 
 
 User login as ${role}
+    Open Browser    about:blank    Firefox
+    Maximize Browser Window
     Go to           ${base_url}
     Run Keyword If    '${role}'=='standard_user'    Input Text    ${username_field}    ${role}
     ...    ELSE IF    '${role}'=='problem_user'    Input Text    ${username_field}    ${role}

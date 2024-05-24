@@ -4,8 +4,7 @@ Library    String
 Resource    ../steps/login_steps.robot
 Resource    ../steps/product_steps.robot
 Resource    ../steps/transaction_steps.robot
-Suite Setup    Open Browser    about:blank    Firefox
-Suite Teardown     Close Browser
+Suite Teardown     Close All Browsers
 
 *** Keywords ***
 Scenario Outline Purchase product as standard_user
@@ -50,7 +49,7 @@ Purchase product as standard_user when user didn't fill data in Your Information
     [Template]    Scenario Outline Purchase product as standard_user when user didn't fill data in Your Information page
     1    ${EMPTY}    Putri    41111    Error: First Name is required
     2    Mitha    ${EMPTY}    41111    Error: Last Name is required
-    # 3    Mitha    Putri    ${EMPTY}    Error: Postal Code is required
-    # 1    ${EMPTY}    ${EMPTY}    41111    Error: First Name is required
-    # 2    Mitha    ${EMPTY}    ${EMPTY}    Error: Last Name is required
-    # 3    ${EMPTY}    Putri    ${EMPTY}    Error: First Name is required
+    3    Mitha    Putri    ${EMPTY}    Error: Postal Code is required
+    1    ${EMPTY}    ${EMPTY}    41111    Error: First Name is required
+    2    Mitha    ${EMPTY}    ${EMPTY}    Error: Last Name is required
+    3    ${EMPTY}    Putri    ${EMPTY}    Error: First Name is required
